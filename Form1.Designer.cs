@@ -32,6 +32,7 @@
             txtID = new TextBox();
             txtPW = new TextBox();
             btnLogin = new Button();
+            lblChckEmail = new Label();
             SuspendLayout();
             // 
             // lblAppLogin
@@ -55,18 +56,20 @@
             txtID.TabIndex = 2;
             txtID.Text = "아이디";
             txtID.Enter += txtID_Enter;
+            txtID.KeyDown += txtID_KeyDown;
             txtID.Leave += txtID_Leave;
             // 
             // txtPW
             // 
             txtPW.Font = new Font("맑은 고딕", 25F);
             txtPW.ForeColor = Color.Silver;
-            txtPW.Location = new Point(67, 305);
+            txtPW.Location = new Point(67, 277);
             txtPW.Name = "txtPW";
             txtPW.Size = new Size(480, 63);
             txtPW.TabIndex = 3;
             txtPW.Text = "패스워드";
             txtPW.Enter += txtPW_Enter;
+            txtPW.KeyDown += txtPW_KeyDown;
             txtPW.Leave += txtPW_Leave;
             // 
             // btnLogin
@@ -74,20 +77,33 @@
             btnLogin.BackColor = SystemColors.ActiveCaption;
             btnLogin.Font = new Font("맑은 고딕", 30F, FontStyle.Bold, GraphicsUnit.Point, 129);
             btnLogin.ForeColor = Color.Blue;
-            btnLogin.Location = new Point(189, 429);
+            btnLogin.Location = new Point(67, 420);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(236, 94);
+            btnLogin.Size = new Size(480, 94);
             btnLogin.TabIndex = 1;
             btnLogin.Text = "로그인";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
+            // 
+            // lblChckEmail
+            // 
+            lblChckEmail.AutoSize = true;
+            lblChckEmail.Font = new Font("맑은 고딕", 11F);
+            lblChckEmail.ForeColor = Color.Red;
+            lblChckEmail.Location = new Point(67, 365);
+            lblChckEmail.Name = "lblChckEmail";
+            lblChckEmail.Size = new Size(367, 25);
+            lblChckEmail.TabIndex = 4;
+            lblChckEmail.Text = "아이디 또는 패스워드를 잘못 되었습니다.";
+            lblChckEmail.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
-            ClientSize = new Size(614, 587);
+            ClientSize = new Size(614, 561);
+            Controls.Add(lblChckEmail);
             Controls.Add(btnLogin);
             Controls.Add(txtPW);
             Controls.Add(txtID);
@@ -104,5 +120,6 @@
         private TextBox txtID;
         private TextBox txtPW;
         private Button btnLogin;
+        private Label lblChckEmail;
     }
 }
